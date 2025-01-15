@@ -1,0 +1,543 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+ --mainTextColor:#274C5B;
+ --secondaryTextColor:#7EB693;
+ --lightText:#FFFFFF;
+ --simpleText:#525C60;
+ --blueBackground:#274C5B;
+ --yellowBackground:#EFD372;
+ --lightGreenBackground:#F1F8F4;
+ --whiteBackground:#FFFFFF;
+ --lightBackground:#F9F8F8;
+}
+body{
+    box-sizing: border-box;
+   /* overflow-x: hidden; */
+}
+h1{
+  color: var(--mainTextColor);
+}
+
+.logoImg{
+    width: 2.31rem;
+    height: 3.56rem;
+}
+.searchBtn{
+  position: absolute;
+  top: 1.8rem;
+  right: 9.95rem;
+
+}
+#basket{
+background-color: var(--blueBackground);
+}
+
+.descBlock{
+max-width: 100vw;
+position: relative;
+overflow: hidden;
+}
+.descImage{
+max-width: 100vw;
+/* max-width: 100%; */
+max-height: 56rem;
+}
+.titleHeading{
+  display: flex;
+  flex-direction: column;
+}
+.descTitle{
+position: absolute;
+top: 13.37rem;
+left: 13rem;
+
+}
+.descTitleYellowtail{
+font-family: Yellowtail, cursive;
+font-size: 2.3rem;
+}
+.descSecondTitle{
+  position: absolute;
+  top: 16.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.descVector1{
+  max-width: 11rem;
+  max-height: 11rem;
+  position: absolute;
+  top: 0.5rem;
+}
+.descVector2{
+  max-width: 4.8rem;
+  max-height: 4.3rem;
+  position: absolute;
+  top: 9rem;
+  left: 9rem;
+}
+.descVector3{
+  max-width: 20.43rem;
+  max-height: 29rem;
+  position: absolute;
+  bottom: -10rem;
+  left: -8rem;
+}
+.descVector4{
+  max-width: 8rem;
+  max-height: 8.7rem;
+  position: absolute;
+  top: 3rem;
+  left: 41rem;
+}
+.descVector5{
+  max-width: 7.35rem;
+  max-height: 5.5rem;
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+}
+.descVector6{
+  max-width: 17.6rem;
+  max-height: 15.8rem;
+  position: absolute;
+  top: -3rem;
+  right: -6rem;
+} 
+.descVector7{
+  max-width: 13.3rem;
+  max-height: 9.5rem;
+  position: absolute;
+  bottom:0;
+  right: 0;
+}
+.descVector8{
+  max-width: 3rem;
+  max-height: 114rem;
+  position: absolute;
+  bottom: 0;
+  right: 4rem;
+}
+.descBtn{
+  padding: 1rem;
+  background-color:var(--yellowBackground);
+  position: absolute;
+  bottom: 8rem;
+  left: 13rem;
+  font-size:small;
+  z-index: 1;
+}
+.iconWrap{
+  background-color: var(--blueBackground);
+}
+.imagesBlock{
+margin: 9.6rem auto 11rem;
+}
+.leftPartImage.rightPartImage{
+ max-width: 43rem;
+ position: relative;
+ max-height: 23rem;
+}
+
+ .leftPartText{
+  font-family: Yellowtail, cursive;
+  position: absolute;
+  top:5rem;
+  left: 15rem;
+  z-index: 3;
+ }
+ .leftPart p{
+  position: absolute;
+  top: 7rem;
+  left: 13rem;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 4;
+ }
+ .rightPartText{
+  font-family: Yellowtail, cursive;
+  position: absolute;
+  color:var(--secondaryTextColor);
+  top:5rem;
+  left:47rem;
+  z-index: 4;
+ }
+ .rightPart p{
+  color: var(--mainTextColor);
+  position: absolute;
+  top: 7rem;
+  left:44rem;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 4;
+ }
+ .aboutBlock{
+  width: 100%;
+  position: relative;
+
+ }
+ .aboutBackgr{
+  width: 100%;
+  margin-left: 0;
+  
+ }
+ .textBlock {
+  position: absolute;
+   top: 10rem;
+   left: 47rem;
+  
+ }
+ .textTop{
+  font-family: Yellowtail, cursive; 
+  color: var(--secondaryTextColor);
+ }
+ .simpleText{
+  color: var(--simpleText);
+ }
+ .abovBtn{
+  background-color: var(--blueBackground);
+ }
+ .abovBtn span{
+  background-color:#335B6B;
+ }
+ .disabledText{
+  text-decoration:line-through;
+ }
+ .prodBlock{
+  max-width: 100%;
+ }
+ .productList{
+  max-width: 80%;
+  margin: 0 auto;
+ }
+ .product{
+  max-width: 18rem;
+  box-shadow: 0 .25rem .37rem #0000001a;
+  transition: transform .2s, box-shadow .2s;
+ }
+.cardBot {
+padding-top: 2rem;
+  position: absolute;
+  bottom: -1rem;
+  left: 3rem;
+}
+.categBtn{
+padding-top: 2rem;
+position: absolute;
+left: 43rem;
+}
+.revBack{
+max-width: 100vw;
+}
+.textRev{
+  position: absolute;
+top: 14rem;
+left: 39rem;
+z-index: 5;
+}
+.reviewsSlide{
+  position:absolute;
+  top:20rem;
+  left:25rem;
+
+}
+.mySwiper{
+ max-width: 48rem;
+position: absolute;
+top: 2rem;
+z-index: 10;
+}
+.customerImage{
+  max-width: 7.18rem;
+  max-height: 7.18rem;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+.customerDescription .customerCategory{
+  font-size: 1.12rem;
+}
+.customerName{
+  font-size: 1.6rem;
+
+}
+.advantages{
+  max-width: 50rem;
+  position: absolute;
+  bottom: 1rem;
+  left:21rem;
+  z-index: 12;
+}
+.circle{
+ min-width: 13rem;
+ min-height: 13rem;
+  border: 0.3rem solid;
+  border-color: var(--secondaryTextColor);
+  border-radius: 50%;
+}
+.vegitables{
+width: 100vw;
+background-color: var(--blueBackground);
+}
+.vegContent{
+margin: 0 auto;
+padding-top: 12rem;
+padding-bottom: 3rem;
+
+}
+.vegBtn{
+  max-width: 14rem;
+  background-color: var(--yellowBackground);
+  padding: 0.5rem 1rem;
+ font-size: 1.25rem;
+}
+.cardBlock{
+margin: 0 auto;
+padding-top: 4rem;
+}
+.productVegan{
+width: 20rem;
+font-size: 1.25rem;
+}
+.vegBtnTag{
+background-color: var(--blueBackground);
+font-size: small;
+width: 75%;
+}
+
+.vegCardDeck{
+font-size: 1.25rem;
+position: absolute;
+bottom: 2rem;
+}
+.vegPrice{
+  font-size: 0.7rem;
+}
+.cardVegBot{
+position: absolute;
+bottom: 0;
+}
+.textSection{
+  position: absolute;
+  background-color:var(--whiteBackground);
+  top: 7rem;
+  right: 10rem;
+  padding: 4.8rem 5.6rem;
+  border-radius: 5rem;
+}
+.secondTitle{
+font-size: 1.6rem;
+font-weight: 400;
+}
+.galeryBlock{
+  background-color: var(--lightGreenBackground);
+  padding: 11.68rem 0;
+
+}
+.cardWrap{
+  position: relative;
+}
+.galeryImage{
+  max-width: 30rem;
+  max-height: 32rem;
+}
+.galeryBtn{
+  position:absolute;
+  left:9rem;
+  top:15.25rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--mainTextColor);
+}
+.blogBlock{
+padding: 11rem 13.25rem;
+}
+.blogContent{
+  max-width: 87rem;
+   position: relative; 
+}
+.blogHeading {
+  max-width: 87rem;
+}
+
+.blogTag1{
+position: absolute;
+top: 7rem;
+left: 2rem;
+border-radius: 50%;
+padding: 1rem 1.5rem;
+font-size: 1.5rem;
+font-weight: bold;
+}
+.blogTag2{
+  position: absolute;
+  top: 7rem;
+  right: 24rem;
+  border-radius: 50%;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+font-weight: bold;
+}
+
+.textBlockBlog1{
+  background-color:var(--whiteBackground);
+  position: absolute;
+  top: 22rem;
+  left: 2rem;
+  padding: 2.9rem 3.3rem 3.8rem;
+}
+
+.textBlockBlog2{
+  position: absolute;
+  top: 22rem;
+  right: 2rem;
+  padding: 2.9rem 3.5rem 3.8rem;
+}
+.blogImage{
+  max-width: 32rem;
+  height: 30rem;
+}
+
+.contentNews{
+  /* max-width: 75%; */
+  /* padding: 0.5rem 16.25rem 7.31rem; */
+position: relative;
+margin: 0 auto;
+}
+.newsLaterImage{
+  /* max-width: 87rem; */
+  width: 100%;
+ padding: 1.5rem 16.25rem 7.31rem;
+}
+.newsLaterHeading{
+  position: absolute;
+  top: 5rem;
+  left:20rem;
+  color: var(--lightText);
+  font-size: 3rem;
+}
+.newsForm {
+  position: absolute;
+  top:6rem;
+  right: 19rem;
+
+}
+.emailInput{
+  padding: 1.50rem 10.85rem 1.93rem 1.43rem;
+  border-radius: 1rem;
+  color: var(--simpleText);
+  border: none;
+}
+.newsSubmit{
+padding: 1.50rem;
+border-radius: 1rem;
+background-color: var(--blueBackground);
+color: var(--lightText);
+border: none;
+}
+.iconBack{
+  background-color: var(--lightGreenBackground);
+  border-radius: 50%;
+  padding:0.5rem 0.8rem;
+  margin: 0.5rem;
+
+}
+.footerBrend{
+width: 12rem;
+padding: 1rem;
+margin-left: 7rem;
+}
+.contacts a,p,address{
+  font-family: Open-sans bolt;
+  font-size: 1.12rem;
+text-decoration: none;
+color: var(--simpleText);
+}
+.footLink{
+  font-size: 1.12rem;
+  font-family: Open-sans bolt;
+color: var(--simpleText);
+}
+.footerText{
+  color: var(--simpleText);
+}
+.boltText,.contacts p{
+font-family: Open-sans bolt;
+font-weight: bold;
+font-size: 1.12rem;
+}
+#footer {
+  position: absolute;
+  left: 0;
+  /* width: 100%; */
+   margin: 2rem 0 0 0;
+   padding: 1.25rem 0 0.63rem ;
+}
+.secondBlock{
+  padding-top: 4.25rem;
+}
+.secondImage{
+  /* max-width: 100%; */
+margin-left: 0;
+padding-top: 4.25rem;
+}
+
+.secondText{
+  margin-left: 2.5rem;
+}
+.thirdBlock{
+  background-color:var(--lightBackground);
+}
+.thirdContent{
+  padding: 11.8rem 14.25rem;
+}
+.thirdBtn {
+  background-color: #ECECEC;
+  padding: 1.8rem 5.68rem 1.8rem 1.68rem;
+  margin: 2.25rem 0 0.75rem;
+}
+.dotIcon{
+  color: var(--secondaryTextColor);
+}
+.thirdBottom{
+  padding: 5.68rem 7.81rem 0 7.81rem;
+}
+.fourthContent{
+  max-width: 80rem;
+  padding: 11.06rem 0 12.62rem ;
+  margin: 0 auto;
+}
+.teamersCard{
+ width: 48rem;
+  background-color: var(--lightBackground);
+  box-shadow: 0 .25rem .37rem #0000001a;
+  transition: transform .2s, box-shadow .2s;
+  overflow: hidden;
+
+}
+.teamersCard :hover{
+  background-color: var(--whiteBackground);
+}
+.fifthBlock{
+  background-color: var(--blueBackground);
+}
+.fifthContent{
+padding: 11.75rem 0;
+}
+.cardWraper{
+  max-width: 87rem;
+  margin: 2rem auto;
+  /* margin:1rem 16rem; */
+
+}
+.fifthImage{
+width: 16.7rem;
+height: 16rem;
+background-color:var(--whiteBackground);
+border-radius: 10%;
+}
+
+

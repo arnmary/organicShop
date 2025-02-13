@@ -1,24 +1,24 @@
-import React from 'react'
-import Description from '../components/Description'
-import AboutUsSection from '../components/AboutUsSection'
-import Categories from '../components/Categories'
-import Reviews from '../components/Reviews'
-import VegitableSection from '../components/VegitableSection'
-import Galery from '../components/Galery'
-import Blog from '../components/Blog'
-import NewsLaterBlock from '../components/NewsLaterBlock'
+import React from 'react';
+import Description from '../components/Description';
+import AboutUsSection from '../components/AboutUsSection';
+import Categories from '../components/Categories';
+import Reviews from '../components/Reviews';
+import VegitableSection from '../components/VegitableSection';
+import Gallery from '../components/Gallery';
+import Blog from '../components/Blog';
+import NewsLetterBlock from '../components/NewsLetterBlock';
 
 export default function Homepage() {
   return (
     <div>
-      <Description></Description>
-    <AboutUsSection></AboutUsSection>
-    <Categories></Categories>
-    <Reviews></Reviews>
-    <VegitableSection></VegitableSection>
-    <Galery></Galery>
-    <Blog></Blog>
-    <NewsLaterBlock></NewsLaterBlock>
+      <Description/>
+      <AboutUsSection/>
+      <Categories/>
+      <Reviews/>
+      <VegitableSection/>
+      <Gallery/>
+      <Blog/>
+      <NewsLetterBlock/>
     </div>
   )
 }

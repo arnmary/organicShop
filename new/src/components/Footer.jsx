@@ -1,28 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import{ faPinterest} from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faFacebook, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import data from '../data/links.json';
 
 export default function Footer() {
   const nowYear = new Date().getFullYear();
   const dataInfo = `© ${nowYear}`;
-  const menuItems = [
-    { name: 'Home', to: '/home' },
-    { name: 'Licence', to: '/licence' },
-    { name: 'Service', to: '/service' },
-    { name: 'FAQ', to: '/faq' },
-    { name: 'About us', to: '/about' },
-  ];
-
+  const { menuItems } = data;
+  
   return (
-    <div className="footerContainer container-fluid  bg-light" id="footer">
+    <div className="footerContainer Container" id="footer">
       <div className="d-flex flex-row justify-content-between border-bottom pb-3 mb-3 mx-5">
-       
-        <div className="contacts border-end  text-end p-5">
-          <h5 className='text-primary-emphasis Roboto-700'>Contact Us</h5>
+        <div className="contacts border-end text-end p-5">
+          <h5 className='mainTitle footerTitle m-0'>Contact Us</h5>
           <ul>
             <li>
               <p className='Open-sans-700 my-1'>Email</p>
@@ -38,52 +29,35 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        {/* Company Info */}
         <div className="d-flex flex-column">
-            <div className="d-flex flex-row justify-content-center footerBrend">
-                    <Link className="navbar-brand my-1 mx-3" to="/home">
-            <img src="/logo.png" alt="logo img" id="logo" className="logoImg" />
-          </Link>
-          <h1 className="display-4 fw-bold text-primary-emphasis mb-2">Organic</h1>
-            </div>
-      
-          <p>
+          <div className="d-flex flex-row justify-content-center footerBrend">
+            <Link className="navbar-brand my-1 mx-3" to="/home">
+              <img src="/logo.png" alt="logo img" id="logo" className="logoImg" />
+            </Link>
+            <h1 className="display-4 fw-bold mainTitle roboto-700 mb-2">Organic</h1>
+          </div>
+          <p className='simpleText'>
             Simply dummy text of the printing and typesetting industry. <br />
             Lorem Ipsum simply dummy text of the printing.
           </p>
           <div className="icons d-flex flex-row justify-content-center">
             <ul className="list-unstyled d-flex">
-              <li key="instagram-icon" className='iconBack'>
-                <a href="https://instagram.com"target='blank' className=' text-primary-emphasis '>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-              </li>
-              <li key="facebook-icon" className='iconBack'>
-                <a href="https://facebook.com" target='blank' className=' text-primary-emphasis '>
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-              </li>
-              <li key="twitter-icon"className='iconBack'>
-                <a href="https://twitter.com" target='blank' className=' text-primary-emphasis ' >
-                <FontAwesomeIcon icon={faTwitter} />
-                </a>
-              </li>
-              <li key="pinterest-icon" className='iconBack'>
-                <a href="https://pinterest.com" target='blank' className=' text-primary-emphasis '>
-                <FontAwesomeIcon icon={faPinterest} />
-                </a>
-              </li>
-
+              {[faInstagram, faFacebook, faTwitter, faPinterest].map((icon, index) => (
+                <li key={index} className='iconBack'>
+                  <a href="#" target="_blank" rel="noopener noreferrer" className='socIcon'>
+                    <FontAwesomeIcon icon={icon} />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-        {/* Utility Pages */}
         <div className="d-flex flex-column border-start text-start p-5">
-          <h5 className='text-primary-emphasis roboto-700'>Utility Pages</h5>
+          <h5 className='mainTitle footerTitle m-0'>Utility Pages</h5>
           <ul className="nav flex-column">
             {menuItems.map((item, index) => (
-              <li className="nav-item " key={index}>
-                <Link className=" footLink nav-link Open-sans-400 text-secondary px-1 py-3" to={item.to}>
+              <li className="nav-item" key={index}>
+                <Link className="footLink nav-link Open-sans-400 text-secondary px-1 py-3" to={item.to}>
                   {item.name}
                 </Link>
               </li>
@@ -91,7 +65,8 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <p className="footerText text-center ">{dataInfo} <span className='boltText'>Organic.</span> </p>
+      <p className="footerText text-center">{dataInfo} <span className='boltText'>Organic.</span></p>
     </div>
   );
 }
+

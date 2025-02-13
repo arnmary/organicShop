@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faArrowRight, faCircleDot } from '@fortawesome/free-solid-svg-icons';
+import data from '../data/team.json';
+import TeamerCard from './TeamerCard';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export default function AboutContent() {
+    const{teamMembers}= data;
+
   return (
     <>
        <div className='secondBlock container-fluid d-flex flex-row'>
@@ -15,7 +17,7 @@ export default function AboutContent() {
       </div>
       <div className="secondText text-start conteiner w-50  ms-5">
       <h3 className="textTop">About Us</h3>
-      <h4 className='mainText roboto-800 text-primary-emphasis mb-3'>
+      <h4 className='mainText roboto-800  mb-3'>
       We do Creative <br />
       Things for Success</h4>
       <p className="simpleText text-start mb-4"
@@ -28,29 +30,32 @@ export default function AboutContent() {
        to been the industry's standard dummy text ever since the 1500s, when an <br />
         unknown printer took a galley.
       </p>
-      <div className='d-flex flex-row justify-content-start mt-5'>
+      <div className='d-flex flex-row justify-content-start mt-5 me-5'>
       <div className='d-flex flex-row me-3'>
           <img src="/icon3.png" alt="Tractor icon" />
-          <h4 className='Roboto-500 text-primary-emphasis text-start'>
+          <h4 className='Roboto-500  secondText text-start ms-3'>
               Modern Agriculture <br />
               Equipment
       </h4>
       </div>
       <div className='d-flex flex-row '>
           <img src="/icon4.png" alt="Fabric icon" />
-          <h4 className='Roboto-500 text-primary-emphasis text-start'>
+          <h4 className='Roboto-500 secondText text-start ms-3 '>
           No growth <br />
           hormones are used    
       </h4>
       </div>
       </div>
       <div className="py-5">
-           <button className='abovBtn rounded rounded-3 roboto-700 text-light my-5 p-3 d-flex align-items-center'>
+        <Link to="/quality" className='text-decoration-none'>
+            <button className='abovBtn rounded rounded-4 text-light my-3 mx-1 d-flex align-items-center'>
                 Explore More
-              <span className='iconWrap bg-opacity-150 rounded rounded-5 mx-2'>
-                   <FontAwesomeIcon icon={faArrowRight} className='text-light bg-opacity-150 p-1' />
+              <span className='mx-3'>
+                   <FontAwesomeIcon icon={faArrowRight} className='text-light rounded vegBtn icon rounded-5 faIconRight' />
                 </span>
           </button>
+        </Link>
+       
       </div>
       </div>
             </div>
@@ -61,24 +66,24 @@ export default function AboutContent() {
                     <h3 className="textTop text-start">
                     Why Choose us?
                     </h3>
-                    <h4 className="mainText roboto-800 text-primary-emphasis text-start mb-3">
+                    <h4 className="mainText roboto-800  text-start mb-3">
                     We do not buy from the <br />
                     open market & traders.
                     </h4>
                     <p className="simpleText">
                     Simply dummy text of the printing and typesetting industry. Lorem had ceased <br />to been the industry's standard  the 1500s, when an unknown
                     </p>
-                    <div className='d-flex flex-row thirdBtn w-75 rounded rounded-5 '>
-                    <FontAwesomeIcon icon={faCircleDot} className=' p-1 ms-2 dotIcon'  />
-                    <p className='roboto-500 ms-2 my-0'>100% Natural Product</p>
+                    <div className='d-flex flex-row align-items-center thirdBtn w-75 rounded rounded-5 '>
+                    <FontAwesomeIcon icon={faCircleDot} className=' ms-4 dotIcon'  />
+                    <p className='roboto-500 secondText pt-2 ms-2 my-0 text-nowrap'>100% Natural Product</p>
                     </div>
                     <p className="simpletext ms-5">
                     Simply dummy text of the printing and typesetting <br />
                     industry Lorem Ipsum
                     </p>
-                    <div className='d-flex flex-row thirdBtn w-75 rounded rounded-5 '>
-                    <FontAwesomeIcon icon={faCircleDot} className=' p-1 ms-2 dotIcon'  />
-                    <p className='roboto-500 ms-2 my-0'> Increases resistance</p>
+                    <div className='d-flex flex-row align-items-center thirdBtn w-75 rounded rounded-5 '>
+                    <FontAwesomeIcon icon={faCircleDot} className=' ms-3 dotIcon'  />
+                    <p className='roboto-500 secondText p-0 ms-2 my-0'> Increases resistance</p>
                     </div>
                     <p className="simpletext ms-5">
                     Filling, and temptingly healthy, our Biona Organic <br />
@@ -89,37 +94,37 @@ export default function AboutContent() {
                     <img src="/image13.jpg" alt="Vegitables image" className='w-100 py-3 ms-2 h-100'/>
                 </div>
             </div>
-<div className="thirdBottom d-flex flex-row gap-3">
-    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white w-25">
+<div className="thirdBottom d-flex flex-row justify-content-between gap-2">
+    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white">
         <img src="/icon5.png" alt="Cart icon" className='p-1 bg-white w-50 mx-auto' />
-        <h5 className="bolt text-center">Return Policy</h5>
+        <h5 className="secondText text-center py-2 m-0 text-nowrap">Return Policy</h5>
         <p className='text-center simpleText'>
             Simply dummy text of <br />
             the printintypesetting <br />
              industry.</p>
 
     </div>
-    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white w-25">
+    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white">
         <img src="/icon6.png" alt="Cart icon" className='p-1 bg-white w-50 mx-auto' />
-        <h5 className="bolt text-center">100% Fresh</h5>
+        <h5 className="secondText text-center py-2 m-0 text-nowrap">100% Fresh</h5>
         <p className='text-center simpleText'>
             Simply dummy text of <br />
             the printintypesetting <br />
              industry.</p>
 
     </div>
-    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white w-25">
+    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white ">
         <img src="/icon7.png" alt="Cart icon" className='p-1 bg-white w-50 mx-auto' />
-        <h5 className="bolt text-center">Support 24/7</h5>
+        <h5 className="secondText text-center py-2 m-0 text-nowrap">Support 24/7</h5>
         <p className='text-center simpleText'>
             Simply dummy text of <br />
             the printintypesetting <br />
              industry.</p>
 
     </div>
-    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white w-25">
+    <div className="specification d-flex flex-column justify-content-center align-content-center px-3 py-5 bg-white">
         <img src="/icon8.png" alt="Cart icon" className='p-1 bg-white w-50 mx-auto' />
-        <h5 className="bolt text-center">Secured Payment
+        <h5 className="secondText text-center py-2 m-0 text-nowrap">Secured Payment
         </h5>
         <p className='text-center simpleText'>
             Simply dummy text of <br />
@@ -129,75 +134,17 @@ export default function AboutContent() {
     </div>
 </div>
           </div>
-          <div className="fouthBlock container-fluid W-100">
+          <div className="fouthBlock  bg-white container-fluid W-100">
 <div className="fourthContent">
     <h5 className="textTop text-center">Team</h5>
-    <h4 className='mainText roboto-800 text-primary-emphasis text-center mb-3'>Our Organic Experts</h4>
+    <h4 className='mainText roboto-800  text-center mb-3'>Our Organic Experts</h4>
     <p className='simpleText text-center'>Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's <br />
      standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-
-    <div className="fourthBottom d-flex flex-row gap-2 justify-content-center w-100 ">
-        <div className="teamersCard rounded-5 bg-light ">
-          <img src="/image14.png" alt="Man photo" />
-          <div className='d-flex flex-row justify-content-between my-5 mx-5'>
-          <div>
-              <h4 className='mainText'> Giovani Bacardo</h4>
-              <h5 className='textTop'>Farmer</h5>  
-         </div>
-
-         <div className='text-end mt-5'>
-               <a href="https://facebook.com" target='blank' className=' text-primary-emphasis p-1'>
-                     <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                 <a href="https://twitter.com" target='blank' className=' text-primary-emphasis p-1 ' >
-                     <FontAwesomeIcon icon={faTwitter} />
-                 </a>
-         </div>
-  </div>
- </div>
-  <div className="teamersCard rounded-5 bg-light ">
-      <img src="/image15.png" alt="Woman photo" />
-     <div className='d-flex flex-row justify-content-between my-5 mx-5'>
-      <div>
-         <h4 className='mainText'>Marianne Loreno</h4>
-         <h5 className='textTop'>Designer</h5>  
-      </div>
-
-       <div className='text-end mt-5'>
-            <a href="https://instagram.com"target='blank' className=' text-primary-emphasis '>
-                 <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://facebook.com" target='blank' className=' text-primary-emphasis p-1'>
-                  <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://twitter.com" target='blank' className=' text-primary-emphasis p-1 ' >
-                 <FontAwesomeIcon icon={faTwitter} />
-            </a>
-     </div>
-     </div>
+     <div className="fourthBottom d-flex flex-row gap-2 justify-content-center w-100">
+    {teamMembers.slice(0, 3).map((member, index) => (
+        <TeamerCard key={index} {...member} />
+    ))}
 </div>
-<div className="teamersCard rounded-5 bg-light ">
-      <img src="/image16.png" alt="Woman photo" />
-     <div className='d-flex flex-row justify-content-between my-5 mx-5'>
-      <div>
-         <h4 className='mainText'>Riga Pelore</h4>
-         <h5 className='textTop'>Farmer</h5>  
-      </div>
-
-       <div className='text-end mt-5'>
-            <a href="https://instagram.com"target='blank' className=' text-primary-emphasis '>
-                 <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://facebook.com" target='blank' className=' text-primary-emphasis p-1'>
-                  <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://twitter.com" target='blank' className=' text-primary-emphasis p-1 ' >
-                 <FontAwesomeIcon icon={faTwitter} />
-            </a>
-     </div>
-     </div>
-</div>
- </div>
 </div>
     </div>
     <div className="fifthBlock conteiner-fluid w-100">

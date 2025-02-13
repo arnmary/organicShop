@@ -1,91 +1,81 @@
-import React from 'react'
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import data from '../data/cards.json';
 
 export default function Blog() {
+  const navigate = useNavigate();
+  const { blogs } = data;
+
+
+  const firstTwoBlogs = blogs.slice(0, 2);
+
+  const handleReadMore = (blogDetails) => {
+    navigate(`/blogDetails/${blogDetails.id}`, { state: blogDetails });
+
+  };
+
   return (
     <>
-    <div className="blogBlock ">
-      <div className='blogContent '>
-         <div className=' blogHeading d-flex flex-row justify-content-between'> 
-        <div>
-             <h3 className="textTop">
-            News
-        </h3>
-        <h3 className='roboto-800 text-primary-emphasis py-1'>
-        Discover weekly content about organic food, & more
-        </h3>
-        </div>
-             <div>
-               <button className='vegBtn rounded rounded-3 roboto-700 text-primary-emphasis bg-light p-3 border-1 d-flex align-items-center'>
-               More News
-                   <span className='iconWrap bg-opacity-150 rounded rounded-5 mx-2'>
-                     <FontAwesomeIcon icon={faArrowRight} className='text-light bg-opacity-150 p-1' />
-                   </span>
-                 </button>
-                   </div>    
-      </div>
-        <div className='cardBlogWrap  d-flex flex-row justify-content-center'>
-        <div className='cardBlog p-3'>
-            <img src="/image9.png" alt="Spinache image" className='blogImage rounded rounded-5'/>
-            <span className=' blogTag1  text-center bg-light roboto-800 m-3'>
-            25 <br />
-            Nov
-            </span>
-                <div className="textBlockBlog1 bg-light rounded rounded-5 ">
-         <span className='d-flex flex-row'>
-     <FontAwesomeIcon icon={faUser} className='text-warning  p-1' /> 
-    <p>By Rachi Card</p>
-        </span>
-        <h5 className='roboto-800 text-primary-emphasis py-'>
-            The Benefits of Vitamin D & How to Get It
-        </h5>
-  <p className='simpleText open-sans-400'>
-  Simply dummy text of the printing and typesetting <br />
-   industry. Lorem Ipsum
- </p>
-  <button className='vegBtn rounded rounded-3  roboto-500text-primary-emphasis  p-2 border-1 d-flex align-items-center'>
-         Read More
-             <span className='iconWrap bg-opacity-150 rounded rounded-5 mx-2'>
-               <FontAwesomeIcon icon={faArrowRight} className='text-light bg-opacity-150 p-1' />
-             </span>
-           </button>
-        </div>
-        </div>
-    
-        <div className='cardBlog p-3'>
-            <img src="/image10.png" alt="Tomatos image" className='blogImage rounded rounded-5'/>
-            <span className=' blogTag2  text-center bg-light  m-3'>
-            25 <br />
-            Nov
-            </span>
-            <div className="textBlockBlog2 bg-light rounded rounded-5">
-         <span className='d-flex flex-row'>
-     <FontAwesomeIcon icon={faUser} className='text-warning  p-1' /> 
-    <p>By Rachi Card</p>
-        </span>
-        <h5 className='roboto-800 text-primary-emphasis py-'>
-        Our Favourite Summertime Tommeto
-        </h5>
-  <p className='simpleText  open-sans-400'>
-  Simply dummy text of the printing and typesetting <br />
-   industry. Lorem Ipsum
- </p>
-  <button className='vegBtn rounded rounded-3 text-primary-emphasis  p-2 border-1 d-flex align-items-center'>
-         Read More
-             <span className='iconWrap bg-opacity-150 rounded rounded-5 mx-2'>
-               <FontAwesomeIcon icon={faArrowRight} className='text-light bg-opacity-150 p-1' />
-             </span>
-           </button>
-        </div>
-        </div>
-  
-      </div>
-      </div>
-     
-    </div>
+    <div className='blogBlock'>
+           <div className="blogContent d-flex justify-content-between">
+                  <div className='blogHeading'>
+                    <h3 className='textTop'>Offer</h3>
+                    <h3 className='mainText'>We Offer Organic For You</h3>
+                  </div>
       
+                  <div>
+                    <Link to="/blog" className='text-decoration-none'>
+                     <button className='blogBtn rounded rounded-4  border-1 d-flex align-items-center'>
+                      View All Product
+                      <div className=' mx-3'>
+                        <FontAwesomeIcon icon={faArrowRight} className='text-light rounded rounded-5 faIconRight ' />
+                      </div>
+                    </button>
+                    </Link>
+                   
+                  </div>
+                </div>
+          <div className="cardBlogWrap d-flex flex-row justify-content-center flex-wrap py-5 my-5">
+        {firstTwoBlogs.map((blog) => (
+          <div key={blog.id} className="cardBlog position-relative p-3 mb-5">
+            <img src={blog.imgSrc} alt={blog.alt} className="blogImage rounded rounded-5 " />
+            <span className=" blogPageTag  text-center bg-light  m-3">
+              {blog.date}
+            </span>
+            <div className=" textBlogBlock  mt-0 rounded rounded-5">
+              <span className="d-flex flex-row">
+                <FontAwesomeIcon icon={faUser} className="userIcon p-1" />
+                <p className="userName mx-1 my-0">By {blog.author}</p>
+              </span>
+              <h6 className="blogSecondTitle m-0">{blog.title}</h6>
+              <p className="simpleText open-sans-400">{blog.text}</p>
+              <button
+                className="blogSectionBtn rounded rounded-4 d-flex align-items-center"
+                onClick={() =>
+                  handleReadMore({
+                    imgSrc: blog.imgSrc,
+                    text: blog.text,
+                    title: blog.title,
+                    author: blog.author,
+                    date: blog.date,
+                  })
+                }
+              >
+                Read More
+                <span className="mx-3">
+                  <FontAwesomeIcon icon={faArrowRight} className="text-light rounded rounded-5 faIconRight " />
+                </span>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  
     </>
-  )
+  );
 }
+
+

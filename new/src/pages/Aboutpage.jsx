@@ -1,16 +1,16 @@
 import React from 'react'
-import NewsLaterBlock from '../components/NewsLaterBlock';
+import NewsLetterBlock from '../components/NewsLetterBlock';
 import AboutContent from '../components/AboutContent';
 
 export default function Aboutpage() {
   return (
     <>
-      <div className='conteiner-fluide'>
-        <img src="/banner1.png" alt="banner organic shop" className='aboutBanner w-100'/>
+      <div className='container-fluid'>
+        <img src="/banner1.png" alt="banner organic shop" className='aboutBanner'/>
+        <h2 className='bannerTitle'>About Us</h2>
       </div>
-      <AboutContent></AboutContent>
-    
-      <NewsLaterBlock></NewsLaterBlock>
+      <AboutContent/>
+      <NewsLetterBlock/>
     </>
   )
 }
